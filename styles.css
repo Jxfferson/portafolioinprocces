@@ -1,0 +1,483 @@
+:root {
+  --bg-light: #f0f0f0;
+  --text-light: #333333;
+  --accent-light: #0077be;
+  --nav-light: #ffffff;
+
+  --bg-dark: #1a1a1a;
+  --text-dark: #ffffff;
+  --accent-dark: #00b4d8;
+  --nav-dark: #0d0d0d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+}
+
+/* Particles background */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Theme Styles */
+body.light-theme {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Adjust content to be more readable in light theme */
+.light-theme .content-box,
+.light-theme .skill-card,
+.light-theme .blog-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .section-title,
+.light-theme h1,
+.light-theme h2,
+.light-theme h3 {
+  color: var(--accent-light);
+}
+
+.light-theme .highlight {
+  color: var(--accent-light);
+}
+
+/* Side Navigation */
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 80px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--nav-dark);
+  transition: background-color 0.3s;
+  z-index: 1000;
+}
+
+.light-theme .side-nav {
+  background-color: var(--nav-light);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--accent-dark);
+}
+
+.side-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.side-nav a:hover {
+  color: var(--accent-dark);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Main Content */
+main {
+  margin-left: 80px;
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle button {
+  background: none;
+  border: 1px solid currentColor;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Section */
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: var(--accent-dark);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: none;
+  border: 2px solid var(--accent-dark);
+  color: var(--accent-dark);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  max-width: fit-content;
+}
+
+.contact-btn:hover {
+  background-color: var(--accent-dark);
+  color: var(--bg-dark);
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  padding: 80px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: var(--accent-dark);
+}
+
+.content-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skill-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card h3 {
+  color: var(--accent-dark);
+  margin-bottom: 15px;
+}
+
+.skill-card ul {
+  list-style: none;
+}
+
+.skill-card li {
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.skill-card li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-dark);
+}
+
+/* Work Section */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+}
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.work-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-info {
+  transform: translateY(0);
+}
+
+.work-card:hover img {
+  transform: scale(1.1);
+}
+
+.light-theme .work-info {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-light);
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Blog Section */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Ensure content is above particles */
+main,
+.side-nav,
+.theme-toggle {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    padding: 0 20px;
+  }
+
+  .side-nav ul {
+    flex-direction: row;
+  }
+
+  .social-links {
+    flex-direction: row;
+  }
+
+  main {
+    margin-left: 0;
+    margin-bottom: 60px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Side Navigation */
+.side-nav {
+  position: sticky; /* Cambiado de 'fixed' a 'sticky' */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--nav-dark);
+  transition: background-color 0.3s;
+  z-index: 1000;
+  float: left; /* Añadido para asegurar el posicionamiento correcto */
+}
+
+/* Main Content */
+main {
+  margin-left: 80px;
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Añadido para el posicionamiento del theme toggle */
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: absolute; /* Cambiado de 'fixed' a 'absolute' */
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Actualizar media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .side-nav {
+    position: fixed; /* En móvil mantenemos fixed */
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    padding: 0 20px;
+    float: none;
+  }
+
+  .side-nav ul {
+    flex-direction: row;
+  }
+
+  .social-links {
+    flex-direction: row;
+  }
+
+  main {
+    margin-left: 0;
+    margin-bottom: 60px;
+    padding: 20px;
+  }
+
+  .theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+
