@@ -1,12 +1,11 @@
-// Import particles.js library.  This assumes particles.js is available via a CDN or has been included in your project.
-// If using a local file, adjust the path accordingly.  For example: import particlesJS from './particles.js';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("themeToggle")
   const themeIcon = themeToggle.querySelector(".theme-icon")
   const themeText = themeToggle.querySelector(".theme-text")
 
-  // Particles.js configuration
+  // Particles.js configuración
   const particlesConfig = {
     particles: {
       number: {
@@ -68,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
     retina_detect: true,
   }
 
-  // Initialize particles.js  (Assuming particlesJS is a globally available function from the particles.js library)
+  // Iniciamos particles.js  
   particlesJS("particles-js", particlesConfig)
 
-  // Function to update particles color based on theme
+  // Función para que las particulas cambien segun el tema escogido (oscuro o claro)
   function updateParticlesColor(theme) {
     const color = theme === "dark" ? "#ffffff" : "#000000"
     window.pJSDom[0].pJS.particles.color.value = color
@@ -79,13 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.pJSDom[0].pJS.fn.particlesRefresh()
   }
 
-  // Check for saved theme preference
+  // Aca se comprueba la "preferencia" del tema guardado
   const savedTheme = localStorage.getItem("theme") || "dark"
   document.body.className = `${savedTheme}-theme`
   updateThemeToggle(savedTheme)
   updateParticlesColor(savedTheme)
 
-  // Theme toggle functionality
+  // Funcionalidad al cambiar el tema
   themeToggle.addEventListener("click", () => {
     const currentTheme = document.body.classList.contains("dark-theme") ? "dark" : "light"
     const newTheme = currentTheme === "dark" ? "light" : "dark"
@@ -101,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeText.textContent = `${theme === "dark" ? "Dark" : "Light"} Mode`
   }
 
-  // Intersection Observer for section animations
+  // Observador que mira las intersecciones para las animaciones entre todas las secciones creadas
   const sections = document.querySelectorAll(".section")
 
   const sectionObserver = new IntersectionObserver(
@@ -121,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionObserver.observe(section)
   })
 
-  // Smooth scroll for navigation links
+  // Para que al desplazar en enlaces se vea "fluido"
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault()
@@ -129,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetSection = document.querySelector(targetId)
 
       if (targetSection) {
-        const yOffset = -80 // Adjust this value based on your header height
+        const yOffset = -80 
         const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset
 
         window.scrollTo({ top: y, behavior: "smooth" })
@@ -137,12 +136,12 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Contact form handling
+
   const contactForm = document.querySelector(".contact-form")
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault()
-      // Add your form submission logic here
+      
       console.log("Form submitted")
     })
   }

@@ -18,7 +18,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust this value based on your header height */
+  scroll-padding-top: 80px; 
 }
 
 body {
@@ -28,7 +28,7 @@ body {
   position: relative;
 }
 
-/* Particles background */
+
 #particles-js {
   position: fixed;
   width: 100%;
@@ -38,7 +38,7 @@ body {
   z-index: -1;
 }
 
-/* Theme Styles */
+/* Estilos de los temas */
 body.light-theme {
   background-color: var(--bg-light);
   color: var(--text-light);
@@ -49,7 +49,7 @@ body.dark-theme {
   color: var(--text-dark);
 }
 
-/* Adjust content to be more readable in light theme */
+/* Ajustamos el contenido para que sea mas legible en el tema claro */
 .light-theme .content-box,
 .light-theme .skill-card,
 .light-theme .blog-card {
@@ -68,7 +68,7 @@ body.dark-theme {
   color: var(--accent-light);
 }
 
-/* Side Navigation */
+/* Navegación de la parte lateral */
 .side-nav {
   position: fixed;
   left: 0;
@@ -119,7 +119,7 @@ body.dark-theme {
   gap: 10px;
 }
 
-/* Main Content */
+/* Contenido principal */
 main {
   margin-left: 80px;
   padding: 40px;
@@ -128,7 +128,7 @@ main {
   flex-direction: column;
 }
 
-/* Theme toggle */
+/* Alternar los temas */
 .theme-toggle {
   position: fixed;
   top: 20px;
@@ -154,7 +154,7 @@ main {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hero Section */
+
 .hero {
   min-height: calc(100vh - 80px);
   display: flex;
@@ -196,7 +196,7 @@ h1 {
   color: var(--bg-dark);
 }
 
-/* Sections */
+/* Secciones */
 .section {
   min-height: 100vh;
   padding: 80px 0;
@@ -234,7 +234,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* Skills Section */
+/* Sectión de habilidades */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -272,10 +272,10 @@ h1 {
   content: "→";
   position: absolute;
   left: 0;
-  color: var(--accent-dark);
+  color: #6b6b6b;
 }
 
-/* Work Section */
+/* Sectión de trabajos hechos */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -320,7 +320,7 @@ h1 {
   color: var(--text-light);
 }
 
-/* Contact Form */
+/* Formulario para contacto*/
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
@@ -350,7 +350,7 @@ h1 {
   resize: vertical;
 }
 
-/* Blog Section */
+/* Sección de blogs */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -368,7 +368,7 @@ h1 {
   transform: translateY(-5px);
 }
 
-/* Ensure content is above particles */
+
 main,
 .side-nav,
 .theme-toggle {
@@ -410,9 +410,9 @@ main,
   }
 }
 
-/* Side Navigation */
+/* Navegación del lado lateral */
 .side-nav {
-  position: sticky; /* Cambiado de 'fixed' a 'sticky' */
+  position: sticky; 
   top: 0;
   left: 0;
   height: 100vh;
@@ -425,20 +425,20 @@ main,
   background-color: var(--nav-dark);
   transition: background-color 0.3s;
   z-index: 1000;
-  float: left; /* Añadido para asegurar el posicionamiento correcto */
+  float: left; 
 }
 
-/* Main Content */
+/* El contenido principal */
 main {
   margin-left: 80px;
   padding: 40px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative; /* Añadido para el posicionamiento del theme toggle */
+  position: relative; 
 }
 
-/* Theme toggle */
+/* Cambio de temas */
 .theme-toggle {
   position: absolute; /* Cambiado de 'fixed' a 'absolute' */
   top: 20px;
@@ -446,10 +446,10 @@ main {
   z-index: 1000;
 }
 
-/* Actualizar media queries para dispositivos móviles */
+/* actualizamos la media para dispositivos móviles */
 @media (max-width: 768px) {
   .side-nav {
-    position: fixed; /* En móvil mantenemos fixed */
+    position: fixed; /* En móvil tenemos que seguir con fixed */
     bottom: 0;
     top: auto;
     width: 100%;
