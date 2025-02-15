@@ -573,4 +573,68 @@ main {
   }
 }
 
-/* Your existing CSS styles here */
+/* Estilos existentes... */
+
+
+.light-theme .hero h1 {
+  color: black;
+}
+
+.light-theme .hero h1 .highlight {
+  color: #f36dff;
+}
+
+/*  navegación movil  */
+@media (max-width: 768px) {
+  /* Estilos existentes*/
+
+  .side-nav {
+      background-color: var(--bg-color);
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .side-nav ul {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      padding: 10px 0;
+  }
+
+  .side-nav ul li {
+      margin: 0;
+  }
+
+  .side-nav ul li a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: var(--text-color);
+  }
+
+  .side-nav ul li a::before {
+      content: '';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+  }
+
+  .side-nav ul li:nth-child(1) a::before { content: '\f015'; } /* Home icon */
+  .side-nav ul li:nth-child(2) a::before { content: '\f007'; } /* About icon */
+  .side-nav ul li:nth-child(3) a::before { content: '\f19d'; } /* Skills icon */
+  .side-nav ul li:nth-child(4) a::before { content: '\f0b1'; } /* Work icon */
+  .side-nav ul li:nth-child(5) a::before { content: '\f0e0'; } /* Contact icon */
+  .side-nav ul li:nth-child(6) a::before { content: '\f781'; } /* Blog icon */
+
+  .mobile-social-links {
+      margin-top: 1cm; /* Bajamos los iconos de redes sociales 1cm en móvil */
+  }
+}
+
+
+@media (min-width: 769px) {
+
+}
+
