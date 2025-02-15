@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("themeToggle")
   const themeIcon = themeToggle.querySelector(".theme-icon")
@@ -136,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-
   const contactForm = document.querySelector(".contact-form")
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
@@ -145,5 +142,18 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Form submitted")
     })
   }
-})
 
+  function handleMobileNav() {
+    const sideNav = document.querySelector('.side-nav');
+    const mainContent = document.querySelector('main');
+
+    if (window.innerWidth <= 768) {
+      mainContent.style.paddingBottom = `${sideNav.offsetHeight}px`;
+    } else {
+      mainContent.style.paddingBottom = '0';
+    }
+  }
+
+  window.addEventListener('resize', handleMobileNav);
+  window.addEventListener('load', handleMobileNav);
+})

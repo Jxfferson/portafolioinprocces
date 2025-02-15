@@ -481,3 +481,96 @@ main {
 }
 
 
+
+/* Estilos Celular */
+@media (max-width: 768px) {
+  .content-wrapper {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .side-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      background-color: var(--bg-color);
+      z-index: 1000;
+  }
+
+  .side-nav .logo,
+  .side-nav .social-links {
+      display: none;
+  }
+
+  .side-nav ul {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+  }
+
+  .side-nav ul li {
+      margin: 0;
+  }
+
+  main {
+      margin-left: 0;
+      padding-bottom: 60px; /* Add space for the bottom nav */
+  }
+
+  .mobile-header {
+      display: block;
+      text-align: center;
+      padding: 20px 0;
+  }
+
+  .mobile-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+  }
+
+  .mobile-header p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+  }
+
+  .mobile-social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+  }
+
+  .mobile-social-links a {
+      font-size: 1.5rem;
+      color: var(--text-color);
+  }
+
+  .hero h1 {
+      font-size: 2rem;
+  }
+
+  .section-title {
+      font-size: 1.8rem;
+  }
+
+  .skills-grid,
+  .work-grid,
+  .blog-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .mobile-header {
+      display: none;
+  }
+}
+
+/* Your existing CSS styles here */
